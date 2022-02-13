@@ -44,7 +44,8 @@ Go to IAM users console -> Create user "ALEX" Using console access setup
 https://console.aws.amazon.com/route53/home?#resource-record-sets:<Hosted-zone-ID-of-subdomain-from-route-53>
 ```
 
-## Policy two ### Below policy can also use, so that user can access route 53 main dashboard without calling above URL:
+## Policy two 
+### Below policy can also use, so that user can access route 53 main dashboard without calling above URL:
 ```sh
 {
     "Version": "2012-10-17",
@@ -72,3 +73,7 @@ https://console.aws.amazon.com/route53/home?#resource-record-sets:<Hosted-zone-I
     ]
 }
 ```
+
+## Conclusion:
+
+IAM User Alex can now access route 53 for manage his subdomain hosted zone without accessing the main domain
