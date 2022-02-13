@@ -17,7 +17,8 @@ A hosted zone is an Amazon Route 53 concept. A hosted zone is analogous to a tra
 ```
 Go to IAM users console -> Create user "ALEX" Using console access setup
 ```
-### Policy i have created for the ALEX user to manage the tech.jomygeorge.xyz subdomain :
+## Policy one
+### Policy i have created for the ALEX user to manage the tech.jomygeorge.xyz subdomain using IAM :
 ```sh
 {
     "Version": "2012-10-17",
@@ -34,6 +35,39 @@ Go to IAM users console -> Create user "ALEX" Using console access setup
                 "route53:ListHostedZonesByName"
             ],
             "Resource": "arn:aws:route53:::hostedzone/<Hosted zone ID of subdomain from route 53>"
+        }
+    ]
+}
+```
+#### IAM user can access the route 53 console by calling the below link:
+```sh
+https://console.aws.amazon.com/route53/home?#resource-record-sets:<Hosted-zone-ID-of-subdomain-from-route-53>
+```
+
+## Policy two ### Below policy can also use, so that user can access route 53 main dashboard without calling above URL:
+```sh
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "route53:GetHostedZone",
+                "route53:ChangeResourceRecordSets",
+                "route53:ListResourceRecordSets"
+            ],
+            "Resource": "arn:aws:route53:::hostedzone/Z0064862302RH0WZLAWCL"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "route53:ListHostedZones",
+                "route53:GetHostedZoneCount",
+                "route53:ListHostedZonesByName"
+            ],
+            "Resource": "*"
         }
     ]
 }
