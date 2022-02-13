@@ -58,7 +58,7 @@ https://console.aws.amazon.com/route53/home?#resource-record-sets:<Hosted-zone-I
                 "route53:ChangeResourceRecordSets",
                 "route53:ListResourceRecordSets"
             ],
-            "Resource": "arn:aws:route53:::hostedzone/Z0064862302RH0WZLAWCL"
+            "Resource": "arn:aws:route53:::hostedzone/<Hosted zone ID of subdomain from route 53>"
         },
         {
             "Sid": "VisualEditor1",
